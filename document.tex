@@ -8,7 +8,7 @@
 \usepackage{verbatim}
 
 \title{Ohmage Installation and Administration Manual for Ubuntu 12.04 (LTS)}
-\subtitle{Version 2.15-0}
+\subtitle{Version 2.16-0}
 
 
 \begin{document}
@@ -28,7 +28,7 @@ The following instructions will deploy a server with:
 
 \begin{itemize}
   \item Ubuntu 12.04
-  \item Ohmage 2.15
+  \item Ohmage 2.16
   \item OpenCPU 0.7 (optional)
 \end{itemize}
 
@@ -115,11 +115,11 @@ Once the system is up to date, you can begin installing Ohmage.
 
 \subsection{Ohmage Installation}
 
-Start by adding the \texttt{ohmage-2.15} package respository to our system:
+Start by adding the \texttt{ohmage-2.16} package respository to our system:
 
 \begin{verbatim}
     sudo apt-get install python-software-properties
-    sudo add-apt-repository ppa:opencpu/ohmage-2.15
+    sudo add-apt-repository ppa:opencpu/ohmage-2.16
 \end{verbatim}
 The system will ask for confirmation on importing the public key. After the
 repository has been added to the system, update the package list:
@@ -163,7 +163,7 @@ open in your browser and use to test the server.
 If you want to remove Ohmage from a system, run:
 
 \begin{verbatim}
-	sudo add-apt-repository --remove ppa:opencpu/ohmage-2.15
+    sudo add-apt-repository --remove ppa:opencpu/ohmage-2.16
     sudo apt-get purge ohmage-*
     sudo apt-get autoremove --purge
 \end{verbatim}
@@ -390,13 +390,18 @@ you can use a command like \texttt{nslookup} on Linux or \texttt{tracert} on
 Windows. Alternatively you can use a free web tool to do the lookup for you,
 for example \url{http://www.dnsgoodies.com/}.
 
- 
-
-
 
 \subsection{Other Ohmage files}
 
-Photos, videos and documents uploaded by users are stored in
+On the Ubuntu installation, the ohmage configuration file containing some
+hardcoded server information can be found at:
+
+\begin{verbatim}
+    /etc/ohmage.conf
+\end{verbatim}
+
+\noindent Usually this file should not be edited. Photos, videos and documents
+uploaded by users are stored in
 
 \begin{verbatim}
     /var/lib/ohmage/images/
